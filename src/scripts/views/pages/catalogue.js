@@ -13,9 +13,18 @@ const RestoCatalogue = {
         `;
   },
 
+  // <div class="sk-chase">
+  //         <div class="sk-chase-dot"></div>
+  //         <div class="sk-chase-dot"></div>
+  //         <div class="sk-chase-dot"></div>
+  //         <div class="sk-chase-dot"></div>
+  //         <div class="sk-chase-dot"></div>
+  //         <div class="sk-chase-dot"></div>
+  //       </div>
+
   async afterRender() {
     const restos = await RestaurantApiSource.restoCatalogue();
-    console.log(restos);
+    // console.log(restos);
     const restoContainer = document.querySelector('.restaurantList');
     restos.forEach((resto) => {
       restoContainer.innerHTML += createRestoItemTemplate(resto);
