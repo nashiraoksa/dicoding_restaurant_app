@@ -20,17 +20,20 @@ const createRestoDetailTemplate = (resto) => `
         <p tabindex="0">${resto.menus.drinks.map((drink) => drink.name + '<br>').join('')}</p>
     </div>
     <div class="resto__review">
-    <h3 class="resto__subtitle" tabindex="0">Customer Reviews</h3>
-    <div class="review__item">
-    <p class="customer" tabindex="0">${resto.customerReviews[0].name}</p>
-    <p class="review" tabindex="0">${resto.customerReviews[0].review}</p>
-    </div>
+    <h3 class="resto__subtitle" tabindex="0">Customer Review</h3>
+    ${resto.customerReviews
+      .map((review) => `
+      <div class="review__item" tabindex="0">
+        <p class="customer" tabindex="0">${review.name}</p>
+        <p class="review" tabindex="0">${review.review}</p>
+      </div>
+    `).join('')}
     </div>
 `;
 
 const createRestoItemTemplate = (resto) => `
     <div class="resto-item">
-        <a href="/#/detail/${resto.id}"><img class="resto-item__pict" src="${CONFIG.BASE_IMAGE_URL}medium/${resto.pictureId}" alt="${resto.name}" tabindex="0"></a>
+        <img class="resto-item__pict" src="${CONFIG.BASE_IMAGE_URL}medium/${resto.pictureId}" alt="${resto.name}" tabindex="0">
         <div class="resto-item__content">
             <h3 class="resto-item__name" tabindex="0"><b><a href="/#/detail/${resto.id}">${resto.name}</a></b></h3>
             <p class="resto-item__location" tabindex="0"><b>Location</b>: ${resto.city}</p>

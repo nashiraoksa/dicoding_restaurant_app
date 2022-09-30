@@ -170,6 +170,8 @@ main {
   margin: 50px;
 }
 
+
+
 /* restaurants list */
 
 .restaurantList {
@@ -184,6 +186,7 @@ main {
   border-radius: 5px;
   overflow: hidden;
   margin: 20px auto;
+  /* padding: 1em; */
 }
 
 .resto-item__content {
@@ -206,6 +209,8 @@ main {
 .resto-item__name a {
   text-decoration: none;
   color: #000;
+  display: block;
+  height: 44px;
 }
 
 .resto-item__name a:hover {
