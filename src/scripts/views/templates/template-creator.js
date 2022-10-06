@@ -33,7 +33,7 @@ const createRestoDetailTemplate = (resto) => `
 
 const createRestoItemTemplate = (resto) => `
     <div class="resto-item">
-        <img class="resto-item__pict" src="${CONFIG.BASE_IMAGE_URL}medium/${resto.pictureId}" alt="${resto.name}" tabindex="0">
+        <img class="resto-item__pict lazyload" data-src="${CONFIG.BASE_IMAGE_URL}medium/${resto.pictureId}" alt="${resto.name}" tabindex="0">
         <div class="resto-item__content">
             <h3 class="resto-item__name" tabindex="0"><b><a href="/#/detail/${resto.id}">${resto.name}</a></b></h3>
             <p class="resto-item__location" tabindex="0"><b>Location</b>: ${resto.city}</p>
@@ -43,16 +43,16 @@ const createRestoItemTemplate = (resto) => `
     </div>
 `;
 
-const createLikeButtonTemplate = () => `
+const createLikeRestoButtonTemplate = () => `
   <button aria-label="like this movie" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
-const createLikedButtonTemplate = () => `
+const createUnlikeRestoButtonTemplate = () => `
   <button aria-label="unlike this movie" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
 
-export { createRestoDetailTemplate, createRestoItemTemplate, createLikeButtonTemplate, createLikedButtonTemplate };
+export { createRestoDetailTemplate, createRestoItemTemplate, createLikeRestoButtonTemplate, createUnlikeRestoButtonTemplate };

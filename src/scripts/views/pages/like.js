@@ -17,9 +17,13 @@ const Like = {
     const restos = await FavoriteRestoIdb.getAllRestos();
     const restoContainer = document.querySelector('#resto-fav');
 
-    restos.forEach((resto) => {
-      restoContainer.innerHTML += createRestoItemTemplate(resto);
-    });
+    if (!restos.length) {
+      restoContainer.innerHTML += `<div class="resto-item__not__found">Tidak ada restaurant untuk ditampilkan</div>`;
+    } else {
+      restos.forEach((resto) => {
+        restoContainer.innerHTML += createRestoItemTemplate(resto);
+      });
+    }
   },
 };
 

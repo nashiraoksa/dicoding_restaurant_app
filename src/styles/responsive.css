@@ -26,6 +26,10 @@
     width: 100%;
     text-align: left;
   }
+
+  .hero {
+    background-image: url('../public/images/heros/hero-image_2-small.jpg');
+  }
 }
 
 @media screen and (min-width: 350px) {

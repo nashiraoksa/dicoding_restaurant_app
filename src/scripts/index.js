@@ -5,6 +5,8 @@ import './component/app-header.js';
 import './component/nav-bar.js';
 import './component/app-hero.js';
 import './component/app-footer.js';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 
